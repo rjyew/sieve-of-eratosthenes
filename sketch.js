@@ -1,8 +1,8 @@
 
 // sieve of eratosthenes
 var cellArr = []; // array of square objects
-var nums = []; // array of numbers from 2 to 100
-var sieved= []; // array of prime numbers from 2 to 100
+var nums = []; // array of numbers from 2 to 10000
+var sieved= []; // array of prime numbers from 2 to 10000
 var locx = 0;
 var locy = 0;
 var CANVAS_SIZE = 500;
