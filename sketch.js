@@ -50,7 +50,7 @@ function draw() {
   text('SIEVE OF ERATOSTHENES', 365, 512);
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
     textSize(10);
-    textStyle(BOLD);
+    textStyle(NORMAL);
     text(sieved[j],503,500);
   }
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
