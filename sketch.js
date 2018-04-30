@@ -58,10 +58,9 @@ function draw() {
       }
     }
   j+=1;
-  if(j>=1 && j <= 10){
+  if(j>=1 && j <= 3){
     textSize(10);
     text('SIEVE OF ERATOSTHENES', 370, 515);
-    text('lel test', 380,520);
   }
   if (j==sieved.length){
     noLoop();
