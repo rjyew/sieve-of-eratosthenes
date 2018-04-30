@@ -6,14 +6,14 @@ var sieved= []; // array of prime numbers from 2 to 10000
 var locx = 0;
 var locy = 0;
 var CANVAS_SIZE = 500;
-var fr = 3; //frameRate
+var fr = 5; //frameRate
 var j = 0; // var to traverse sieved arr
 var num = 1; // var to track the number each cell represents
 var d;
 function setup() {
   frameRate(fr);
   createCanvas(1000,1000);
-  background(255);
+  background(0);
  // adding values to nums
   for (var i = 1; i < 10000; i++){
     append(nums,i+1);
@@ -47,18 +47,21 @@ function draw() {
   background(255);
   textStyle(BOLD);
   textSize(10);
-  text('SIEVE OF ERATOSTHENES', 370, 515);
+  text('SIEVE OF ERATOSTHENES', 370, 510);
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
     textStyle(NORMAL);
-    textSize(50);
-    text(sieved[j],520,500);
+    textSize(40);
+    text(sieved[j],510,500);
   }
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
      cellArr[sieved[j]-1].changeColor();
   }
   for (var i = 0; i < cellArr.length; i++){
-      cellArr[j]
-      if ((i+1) == sieved[j]){
+      if (i == 0){
+        cellArr[i].specialColor();
+        cellArr[i].display();
+      }
+      else if ((i+1) == sieved[j]){
         cellArr[i].display();
       }
       else if ((i+1) % sieved[j] == 0 && (i+1) != sieved[j]){
@@ -70,11 +73,14 @@ function draw() {
       }
     }
   cellArr[sieved[j]-1].revertColor();
-  if ((sieved[j]-1)*(sieved[j]-1) > 10000){
-    noLoop();
-  }
-  cellArr[sieved[j]-1].revertColor();
   j+=1;
+  cellArr[sieved[j]-1].revertColor();
+  if ((sieved[j]-1)*(sieved[j]-1) > 10000){
+    j = 0;
+    for (var i = 0; i < cellArr.length; i++){
+      cellArr[i].revertColor();
+    }
+  }
 }
 
 /* starts from 2 */
@@ -106,6 +112,9 @@ function Cell(locx,locy,c,num){
   }
   this.revertColor = function(){
     this.c = 255;
+  }
+  this.specialColor = function(){
+    this.c = 100;
   }
   this.clicked = function(){ //function not implemented
     d = dist(mouseX,mouseY,this.locx,this.locy);
