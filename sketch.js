@@ -5,7 +5,7 @@ var nums = []; // array of numbers from 2 to 10000
 var sieved= []; // array of prime numbers from 2 to 10000
 var locx = 0;
 var locy = 0;
-var CANVAS_SIZE = 500;
+var CANVAS_SIZE = 800;
 var fr = 3; //frameRate
 var j = 0; // var to traverse sieved arr
 var num = 1; // var to track the number each cell represents
@@ -46,12 +46,12 @@ function setup() {
 function draw() {
   background(255);
   textStyle(BOLD);
-  textSize(10.5);
-  text('SIEVE OF ERATOSTHENES', 365, 512);
+  textSize(CANVAS_SIZE/(CANVAS_SIZE/20.5));
+  text('SIEVE OF ERATOSTHENES', CANVAS_SIZE/1.5, CANVAS_SIZE*1.025);
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
-    textSize(10);
-    textStyle(NORMAL);
-    text(sieved[j],503,500);
+    textSize(CANVAS_SIZE/(CANVAS_SIZE/18));
+    textStyle(BOLD);
+    text(sieved[j],CANVAS_SIZE*1.003,CANVAS_SIZE);
   }
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
      cellArr[sieved[j]-1].changeColor();
@@ -102,7 +102,7 @@ function Cell(locx,locy,c,num){
   this.num = num;
   this.display = function() {
     fill(this.c);
-    rect(this.locx,this.locy,5,5);
+    rect(this.locx,this.locy,CANVAS_SIZE/100,CANVAS_SIZE/100);
   }
   this.change = function(){
     this.c= 0;
