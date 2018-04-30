@@ -58,7 +58,7 @@ function draw() {
       }
     }
   j+=1;
-  if(j==1){
+  if(j>=1 && j <= 3){
     textSize(10);
     text('SIEVE OF ERATOSTHENES', 370, 515);
   }
