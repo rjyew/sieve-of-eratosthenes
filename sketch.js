@@ -1,4 +1,3 @@
-
 // sieve of eratosthenes
 var cellArr = []; // array of square objects
 var nums = []; // array of numbers from 2 to 10000
@@ -48,12 +47,12 @@ function draw() {
   textStyle(BOLD);
   textSize(CANVAS_SIZE/(CANVAS_SIZE/20.5));
   textAlign(RIGHT);
-  text('SIEVE OF ERATOSTHENES', CANVAS_SIZE, CANVAS_SIZE*1.025);
+  text('SIEVE OF ERATOSTHENES', CANVAS_SIZE, CANVAS_SIZE*1.05);
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
     textSize(CANVAS_SIZE/(CANVAS_SIZE/18));
     textStyle(BOLD);
     textAlign(LEFT);
-    text(sieved[j],CANVAS_SIZE*1.003,CANVAS_SIZE);
+    text(sieved[j],CANVAS_SIZE*1.02,CANVAS_SIZE);
   }
   if ((sieved[j]-1)*(sieved[j]-1) < 10000){
      cellArr[sieved[j]-1].changeColor();
@@ -130,5 +129,3 @@ function Cell(locx,locy,c,num){
     }
   }
 }
-  
-
